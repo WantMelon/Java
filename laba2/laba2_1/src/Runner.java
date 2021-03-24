@@ -3,7 +3,7 @@ import java.awt.*;
 import java.util.Scanner;
 
 public class Runner extends Canvas {
-    public static Point createPoint() {
+    public static Point inputPoints() {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Input x: ");
@@ -14,19 +14,22 @@ public class Runner extends Canvas {
         return new Point(x, y);
     }
 
+    public static Point getThirdPoint(Point A, Point B) {
+        double x;
+        double y;
+
+        x = ((A.getX() + B.getX()) + (A.getY() - B.getY())) / 2;
+        y = ((A.getY() + B.getY()) - (A.getX() - B.getX())) / 2;
+
+        return new Point(x, y);
+    }
+
     public static Circle createCircle(Point A, Point B) {
+        Point C = getThirdPoint(A, B);
+
         Segment AB = new Segment(A, B);
-
-        // TODO
-        Point C = new Point();
-        C.setX(AB.getMiddlePoint().getX() + AB.getLength() / 2);
-        C.setY(AB.getMiddlePoint().getY());
-        System.out.println(C.getX() + ", " + C.getY());
-
         Segment BC = new Segment(B, C);
         Segment AC = new Segment(A, C);
-        System.out.println("Length: " + AB.getLength() + ", " + BC.getLength()
-                + ", " + AC.getLength());
 
         double perimeter;
         perimeter = AB.getLength() + AC.getLength() + BC.getLength();
@@ -43,12 +46,12 @@ public class Runner extends Canvas {
     }
 
     public static void main(String[] args) {
-        Point A = createPoint();
-        Point B = createPoint();
+        Point A = inputPoints();
+        Point B = inputPoints();
+        System.out.println();
 
         Circle circle = createCircle(A, B);
-        System.out.println("Center of circle: (" + circle.getCenter().getX()
-                + ", " + circle.getCenter().getY() + ")");
+        System.out.println(circle.getCenter().toString());
         System.out.println("Radius of circle: " + circle.getRadius());
     }
 }
