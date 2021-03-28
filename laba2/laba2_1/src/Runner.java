@@ -51,7 +51,7 @@ public class Runner extends Canvas {
         System.out.println();
 
         Circle circle = createCircle(A, B);
-        System.out.println(circle.getCenter().toString());
+        System.out.println("Center of circle: " + circle.getCenter().toString());
         System.out.println("Radius of circle: " + circle.getRadius());
     }
 }
