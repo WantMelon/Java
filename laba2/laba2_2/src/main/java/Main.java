@@ -41,29 +41,43 @@ public class Main {
         }
     }
 
-    public static int findMaxAnswer(ArrayList<Integer> numbers,
+    public static Node[][] fillMatrix(ArrayList<Integer> numbers,
                                     ArrayList<Character> signs) {
-        int[][] matrix = new int[numbers.size()][numbers.size()];
+        Node[][] matrix = new Node[numbers.size()][numbers.size()];
         for (int i = 0; i < numbers.size(); ++i) {
-            matrix[i][i] = numbers.get(i);
+            matrix[i][i] = new Node(numbers.get(i));
         }
 
         for (int k = 1; k < matrix.length; ++k) {
             for (int i = k; i < matrix.length; ++i) {
                 int j = i - k;
+                ArrayList<Integer> curPath = new ArrayList<>();
                 int maxNum = Integer.MIN_VALUE;
                 for (int m = 0; m < k; ++m) {
-                    int el1 = matrix[i - 1 - m][j];
-                    int el2 = matrix[i][k + j - m];
+                    int el1 = matrix[i - 1 - m][j].number;
+                    int el2 = matrix[i][k + j - m].number;
                     int num = operation(el1, el2, signs.get(i - 1 - m));
                     if (num > maxNum) {
                         maxNum = num;
+                        curPath.clear();
+                        curPath.addAll(matrix[i - 1 - m][j].path);
+                        curPath.addAll(matrix[i][k + j - m].path);
+                        curPath.add(i - 1 - m);
                     }
                 }
-                matrix[i][j] = maxNum;
+                matrix[i][j] = new Node(maxNum);
+                matrix[i][j].path.addAll(curPath);
             }
         }
-        return matrix[matrix.length - 1][0];
+
+        return matrix;
+    }
+
+    public static void printData(Node[][] matrix) {
+        System.out.println("Path: " +
+                matrix[matrix.length - 1][0].path.toString());
+        System.out.println("Max value: " +
+                matrix[matrix.length - 1][0].number);
     }
 
     public static void main(String[] args) {
@@ -71,7 +85,8 @@ public class Main {
         checkExpression(expression);
         ArrayList<Integer> numbers = fillNumbers(expression);
         ArrayList<Character> signs = fillSigns(expression);
-        int maxAnswer = findMaxAnswer(numbers, signs);
-        System.out.println(maxAnswer);
+        Node[][] matrix = fillMatrix(numbers, signs);
+
+        printData(matrix);
     }
 }
