@@ -2,6 +2,13 @@ import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class Main {
+    public static void checkExpression(String expression) {
+        String regex = "([0-9]+[+*])*[0-9]+";
+        if (!Pattern.matches(regex, expression)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
     public static ArrayList<Integer> fillNumbers(String expression) {
         Pattern pattern = Pattern.compile("[+*]");
         String[] stringNumbers = pattern.split(expression);
@@ -41,25 +48,27 @@ public class Main {
             matrix[i][i] = numbers.get(i);
         }
 
-        //int result;
-        for (int i = 1, j = 1; i < matrix.length; ++i, ++j) {
-            int maxNum = Integer.MIN_VALUE;
-            for (int k = 0; k < i; ++k) {
-                int el1 = i - 1 - k;
-                int el2 = j + i - k;
-                int num = operation(el1, el2, signs.get(i));
-                if (num > maxNum) {
-                    maxNum = num;
+        for (int k = 1; k < matrix.length; ++k) {
+            for (int i = k; i < matrix.length; ++i) {
+                int j = i - k;
+                int maxNum = Integer.MIN_VALUE;
+                for (int m = 0; m < k; ++m) {
+                    int el1 = matrix[i - 1 - m][j];
+                    int el2 = matrix[i][k + j - m];
+                    int num = operation(el1, el2, signs.get(i - 1 - m));
+                    if (num > maxNum) {
+                        maxNum = num;
+                    }
                 }
+                matrix[i][j] = maxNum;
             }
-            matrix[i][i - j] = maxNum;
         }
-
-        return matrix[matrix.length - 1][matrix.length - 1];
+        return matrix[matrix.length - 1][0];
     }
 
     public static void main(String[] args) {
         String expression = "1+2*3+4*5";
+        checkExpression(expression);
         ArrayList<Integer> numbers = fillNumbers(expression);
         ArrayList<Character> signs = fillSigns(expression);
         int maxAnswer = findMaxAnswer(numbers, signs);

@@ -33,4 +33,10 @@ class MainTest {
                 Main.operation(2, -4, '+')
         );
     }
+
+    @Test
+    void checkExpressionTest() {
+        String expression = "3+2*43";
+        Main.checkExpression(expression);
+    }
 }
