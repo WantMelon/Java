@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
 
-public class Runner extends Canvas {
+public class Runner {
     public static Point inputPoints() {
         Scanner sc = new Scanner(System.in);
 
