@@ -8,12 +8,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input substring for 1st part of the task: ");
         String substring = sc.next();
-        System.out.println(Arrays.stream(args).sorted(new FirstComparator(substring)));
+        Arrays.sort(args, new FirstComparator(substring));
+        System.out.println(Arrays.toString(args));
+
 
         System.out.println("Input 2 substrings for 2nd part of the task: ");
         String substringS1 = sc.next();
         String substringS2 = sc.next();
-        System.out.println(Arrays.stream(args).sorted
-                (new SecondComparator(substringS1, substringS2)));
+        Arrays.sort(args, new SecondComparator(substringS1, substringS2));
+        System.out.println(Arrays.toString(args));
     }
 }

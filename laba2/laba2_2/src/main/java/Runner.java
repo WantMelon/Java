@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void checkExpression(String expression) {
-        String regex = "([0-9]+[+*])*[0-9]+";
+        String regex = "(-?[0-9]+[+*])*(-?[0-9])+";
         if (!Pattern.matches(regex, expression)) {
             throw new IllegalArgumentException();
         }
@@ -42,7 +42,7 @@ public class Main {
     }
 
     public static Node[][] fillMatrix(ArrayList<Integer> numbers,
-                                    ArrayList<Character> signs) {
+                                      ArrayList<Character> signs) {
         Node[][] matrix = new Node[numbers.size()][numbers.size()];
         for (int i = 0; i < numbers.size(); ++i) {
             matrix[i][i] = new Node(numbers.get(i));
@@ -81,7 +81,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String expression = "1+2*3+4*5";
+        String expression = "1+2*-3";
         checkExpression(expression);
         ArrayList<Integer> numbers = fillNumbers(expression);
         ArrayList<Character> signs = fillSigns(expression);
