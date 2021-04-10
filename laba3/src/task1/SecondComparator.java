@@ -13,6 +13,10 @@ public class SecondComparator implements Comparator<String> {
         this.endSubstring = endSubstring;
     }
 
+    public int getCompareCounter() {
+        return compareCounter;
+    }
+
     @Override
     public int compare(String s1, String s2) {
         compareCounter++;
