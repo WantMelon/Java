@@ -11,7 +11,6 @@ public class Main {
         Arrays.sort(args, new FirstComparator(substring));
         System.out.println(Arrays.toString(args));
 
-
         System.out.println("Input 2 substrings for 2nd part of the task: ");
         String substringS1 = sc.next();
         String substringS2 = sc.next();
