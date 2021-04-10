@@ -1,6 +1,6 @@
-package task1;
-
 import org.junit.jupiter.api.Test;
+import task1.FirstComparator;
+import task1.SecondComparator;
 
 import java.util.Arrays;
 
@@ -11,7 +11,7 @@ class MainTest {
     @Test
     void firstComparatorTest() {
         String[] actual = {"string", "test", "first", "кто тут?"};
-        String[] expected = {"кто тут?", "string", "test", "first"};
+        String[] expected = {"string", "test", "first", "кто тут?"};
         Arrays.sort(actual, new FirstComparator("t"));
         assertArrayEquals(
                 expected,
@@ -21,8 +21,8 @@ class MainTest {
 
     @Test
     void secondCompareTest() {
-        String[] actual = {"favail", "sssss", "agufadodolas"};
-        String[] expected = {"agufadodolas", "favail", "sssss"};
+        String[] actual = {"favail", "sssss", "agufadodolas", "lasfa"};
+        String[] expected = {"agufadodolas", "favail", "sssss", "lasfa"};
         Arrays.sort(actual, new SecondComparator("fa", "l"));
         assertArrayEquals(
                 expected,
