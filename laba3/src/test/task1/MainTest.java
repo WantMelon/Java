@@ -29,4 +29,13 @@ class MainTest {
                 actual
         );
     }
+
+    @Test
+    void parseStringTest() {
+        String string = "1 2 3, 4 a5a 6 789 0";
+        assertEquals(
+                "one two three, four a5a six 789 zero",
+                task2.Main.parseString(string)
+        );
+    }
 }
