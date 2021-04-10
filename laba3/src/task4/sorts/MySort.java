@@ -1,4 +1,4 @@
-package task4;
+package task4.sorts;
 
 import java.util.Comparator;
 

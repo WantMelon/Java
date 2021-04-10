@@ -1,9 +1,9 @@
-package task4;
+package task4.sorts;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class BubbleSort<T> implements MySort<T>{
+public class BubbleSort<T> implements MySort<T> {
     private int swapCounter;
     private int compareCounter;
     private final T[] arr;
