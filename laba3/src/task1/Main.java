@@ -8,13 +8,18 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input substring for 1st part of the task: ");
         String substring = sc.next();
-        Arrays.sort(args, new FirstComparator(substring));
+        FirstComparator firstComparator = new FirstComparator(substring);
+        Arrays.sort(args, firstComparator);
         System.out.println(Arrays.toString(args));
+        System.out.println("Compare times: " + firstComparator.getCompareCounter());
 
         System.out.println("Input 2 substrings for 2nd part of the task: ");
         String substringS1 = sc.next();
         String substringS2 = sc.next();
-        Arrays.sort(args, new SecondComparator(substringS1, substringS2));
+        SecondComparator secondComparator
+                = new SecondComparator(substringS1, substringS2);
+        Arrays.sort(args, secondComparator);
         System.out.println(Arrays.toString(args));
+        System.out.println("Compare times: " + secondComparator.getCompareCounter());
     }
 }
