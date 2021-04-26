@@ -1,3 +1,5 @@
+package task1;
+
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
@@ -26,8 +28,6 @@ public class Stack<E> {
     }
 
     public E pop() {
-        int len = arr.length;
-
         E obj = peek();
         elementCount--;
         arr[elementCount] = null;
