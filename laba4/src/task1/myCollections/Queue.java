@@ -1,8 +1,8 @@
-package task1;
+package task1.myCollections;
 
 import java.util.NoSuchElementException;
 
-public class Queue<E> {
+public class Queue<E> implements MyCollection<E>{
     private static class Node<E> {
         E item;
         Queue.Node<E> next;
@@ -44,5 +44,16 @@ public class Queue<E> {
             newTail.prev = null;
         }
         return element;
+    }
+
+    public E peek() {
+        if (tail == null) {
+            throw new NoSuchElementException();
+        }
+        return tail.item;
+    }
+
+    public boolean isEmpty() {
+        return tail == head;
     }
 }

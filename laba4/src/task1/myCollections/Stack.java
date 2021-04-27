@@ -1,9 +1,9 @@
-package task1;
+package task1.myCollections;
 
 import java.util.Arrays;
 import java.util.EmptyStackException;
 
-public class Stack<E> {
+public class Stack<E> implements MyCollection<E>{
     private Object[] arr;
     private int elementCount;
 
@@ -46,5 +46,9 @@ public class Stack<E> {
 
     public int size() {
         return elementCount;
+    }
+
+    public boolean isEmpty() {
+        return size() == 0;
     }
 }

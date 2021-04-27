@@ -1,6 +1,6 @@
 import org.junit.jupiter.api.Test;
-import task1.Queue;
-import task1.Stack;
+import task1.myCollections.Queue;
+import task1.myCollections.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
