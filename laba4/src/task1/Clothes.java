@@ -19,8 +19,8 @@ public class Clothes {
         return buttonsAmount;
     }
 
-    public int getButtonDarningTime() {
-        return buttonDarningTime;
+    public int getDarningTime() {
+        return darningTime;
     }
 
     public int getProcessingTime() {

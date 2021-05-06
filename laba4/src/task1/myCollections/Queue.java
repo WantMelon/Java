@@ -17,8 +17,10 @@ public class Queue<E> implements MyCollection<E>{
 
     private Node<E> head;
     private Node<E> tail;
+    private int size = 0;
 
     public void push(E e) {
+        size++;
         final Node<E> f = head;
         head = new Node<>(f, e, null);
         if (f == null) {
@@ -33,6 +35,7 @@ public class Queue<E> implements MyCollection<E>{
         if (l == null) {
             throw new NoSuchElementException();
         }
+        size--;
         E element = l.item;
         final Node<E> newTail = l.next;
         l.next = null;
@@ -54,6 +57,10 @@ public class Queue<E> implements MyCollection<E>{
     }
 
     public boolean isEmpty() {
-        return tail == head;
+        return size == 0;
+    }
+
+    public int getSize() {
+        return size;
     }
 }

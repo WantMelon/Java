@@ -25,6 +25,10 @@ public class Seamstress {
         return workingTime;
     }
 
+    public Clothes getCurrentClothes() {
+        return currentClothes;
+    }
+
     public void increaseDownTime() {
         downtime++;
     }

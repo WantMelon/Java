@@ -35,25 +35,49 @@ public class Main {
         Seamstress second = new Seamstress(bufferedStack, finishStack);
 
         while (!clothesQueue.isEmpty()) {
+            // 0
+            if (first.isBusy()) {
+                first.increaseWorkingTime();
+            } else {
+                first.increaseDownTime();
+            }
+            if (second.isBusy()) {
+                second.increaseWorkingTime();
+            } else {
+                second.increaseDownTime();
+            }
+
+            // 1
             clothesQueue.peek().decreaseProcessingTime();
+
+            // 2
             if (clothesQueue.peek().getProcessingTime() == 0) {
                 startStack.push(clothesQueue.pop());
             }
-            if (startStack.isEmpty() && !first.isBusy()) {
-                first.increaseDownTime();
-            } else if (!startStack.isEmpty() && !first.isBusy()) {
+
+            // 3
+            if (!startStack.isEmpty() && !first.isBusy()) {
                 first.addCurrentClothes(startStack.pop());
-            } else {
-                first.increaseWorkingTime();
+            }
+            if (!bufferedStack.isEmpty() && !second.isBusy()) {
+                second.addCurrentClothes(bufferedStack.pop());
             }
 
-            if (bufferedStack.isEmpty() && !second.isBusy()) {
-                second.increaseDownTime();
-            } else if (!bufferedStack.isEmpty() && !second.isBusy()) {
-                second.addCurrentClothes(bufferedStack.pop());
-            } else {
-                second.increaseWorkingTime();
+            // 4
+            if (first.isBusy() && first.getCurrentClothes().getDarningTime() == 0) {
+                bufferedStack.push(first.removeCurrentClothes());
+            } else if (first.isBusy()) {
+                first.getCurrentClothes().decreaseDarningTime();
+            }
+            if (second.isBusy() && second.getCurrentClothes().getDarningTime() == 0) {
+                finishStack.push(second.removeCurrentClothes());
+            } else if (second.isBusy()) {
+                second.getCurrentClothes().decreaseDarningTime();
             }
         }
+        System.out.println("Working time 1-st: " + first.getWorkingTime());
+        System.out.println("Downtime time 1-st: " + first.getDowntime());
+        System.out.println("Working time 2-nd: " + first.getWorkingTime());
+        System.out.println("Downtime time 2-nd: " + first.getDowntime());
     }
 }

@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa6da7cf-0a3a-42ae-adb6-02bc8fb02e1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/task1/Clothes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task1/Seamstress.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task1/myCollections/MyCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laba4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/laba4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task1/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1/Clothes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/task1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task1/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1/myCollections/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/task1/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1/myCollections/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task1/Seamstress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1/Seamstress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task1/myCollections/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task1/myCollections/Queue.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
