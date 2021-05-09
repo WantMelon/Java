@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa6da7cf-0a3a-42ae-adb6-02bc8fb02e1c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/task2/BooksInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task2/Date.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task2/Handler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/task2/library.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task2/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2/Date.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task2/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/task2/library.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/task2/library.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +24,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1rh3xhNWkaNbLJUkDMyxw0f5pRI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -81,13 +88,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,7 +129,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619414744512</updated>
-      <workItem from="1620491122142" duration="9626000" />
+      <workItem from="1620491122142" duration="9722000" />
+      <workItem from="1620554644929" duration="6786000" />
     </task>
     <servers />
   </component>
@@ -138,16 +148,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/task2/Main.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
