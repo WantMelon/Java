@@ -97,19 +97,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="laba4" />
       <option name="PACKAGE_NAME" value="" />
@@ -142,7 +129,8 @@
       <workItem from="1620491122142" duration="9722000" />
       <workItem from="1620554644929" duration="7215000" />
       <workItem from="1620609947394" duration="1433000" />
-      <workItem from="1620646583130" duration="8216000" />
+      <workItem from="1620646583130" duration="8307000" />
+      <workItem from="1620741483845" duration="390000" />
     </task>
     <servers />
   </component>
